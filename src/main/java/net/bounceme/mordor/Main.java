@@ -9,7 +9,7 @@ public class Main {
     }
 
     private void foo() {
-        out.println("hello world");
+        out.println("\nhello world\n");
     }
 
 }
