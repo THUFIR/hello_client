@@ -15,6 +15,8 @@ if (!hasProperty('mainClass')) {
     ext.mainClass = 'net.bounceme.mordor.Main'
 }
 
+mainClassName = 'net.bounceme.mordor.Main'
+
 repositories {
     mavenCentral()
     // You may define additional repositories, or even remove "mavenCentral()".
@@ -30,14 +32,10 @@ dependencies {
 }
 
 
-
-jar {
-    // Keep jar clean:
-    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
-
+/*
+jar  {
     manifest {
-        attributes 'Main-Class': 'net.bounceme.mordor.Main',
-                   'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' ')
+        attributes 'Main-Class': 'net.bounceme.mordor.Main'
     }
 }
-
+*/
