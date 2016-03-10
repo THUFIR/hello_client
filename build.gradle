@@ -31,8 +31,9 @@ jar {
     }
 }
 
-
-
-
 assemble.dependsOn (jar)
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
 
