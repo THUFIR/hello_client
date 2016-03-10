@@ -23,7 +23,7 @@ repositories {
     // Read more about repositories here:
     //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
 
-maven { url "https://jitpack.io" }
+    maven { url "https://jitpack.io" }
 
 }
 
@@ -35,7 +35,7 @@ dependencies {
 
 
 
-compile 'com.github.THUFIR:hello_api:latest'
+    compile 'com.github.THUFIR:hello_api:latest'
 
 }
 
