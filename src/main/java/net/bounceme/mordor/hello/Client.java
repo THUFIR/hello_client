@@ -1,12 +1,12 @@
-package net.bounceme.mordor;
+package net.bounceme.mordor.hello;
 
 import static java.lang.System.out;
 import net.bounceme.mordor.hello.HelloLibrary;
 
-public class Hello {
+public class Client {
 
     public static void main(String[] args) {
-        new Hello().foo();
+        new Client().foo();
     }
 
     private void foo() {

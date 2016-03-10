@@ -5,10 +5,10 @@ apply plugin: 'maven'
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 if (!hasProperty('mainClass')) {
-    ext.mainClass = 'Main'
+    ext.mainClass = 'Client'
 }
 
-mainClassName = 'net.bounceme.mordor.Main'
+mainClassName = 'net.bounceme.mordor.hello.Client'
 
 repositories {
     mavenCentral()
@@ -26,7 +26,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes ('Main-Class': 'net.bounceme.mordor.Main',
+        attributes ('Main-Class': 'net.bounceme.mordor.hello.Client',
             "Class-Path": configurations.compile.collect { it.getName() }.join(' '))
     }
 }
