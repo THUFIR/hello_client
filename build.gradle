@@ -46,18 +46,5 @@ jar {
     manifest {
         attributes ('Main-Class': 'net.bounceme.mordor.Main',
             "Class-Path": configurations.compile.collect { it.getName() }.join(' '))
-        //  'Class-Path': configurations.runtime.files.collect { jarDir+"/$it.name" }.join(' ')
-        // )
     }
 }
-
-/*
-
-
-jar  {
-manifest {
-attributes 'Main-Class': 'net.bounceme.mordor.Main'
-}
-}
-
- */
