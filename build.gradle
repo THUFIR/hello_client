@@ -24,7 +24,6 @@ dependencies {
 
 
 jar {
-    //from configurations.runtime
     manifest {
         attributes ('Main-Class': 'net.bounceme.mordor.Main',
             "Class-Path": configurations.compile.collect { it.getName() }.join(' '))
