@@ -3,10 +3,10 @@ package net.bounceme.mordor.hello.client;
 import static java.lang.System.out;
 import net.bounceme.mordor.hello.library.HelloLibrary;
         
-public class Client {
+public class HelloClient {
 
     public static void main(String[] args) {
-        new Client().runLibrary();
+        new HelloClient().runLibrary();
     }
 
     private void runLibrary() {
