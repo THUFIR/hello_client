@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.10'
-    compile 'com.github.THUFIR:hello_api:latest'
+    compile 'com.github.THUFIR:hello_api:dev'
 
 }
 

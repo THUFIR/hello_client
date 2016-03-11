@@ -1,7 +1,7 @@
 package net.bounceme.mordor.hello.client;
 
 import static java.lang.System.out;
-import net.bounceme.mordor.hello.library;
+import net.bounceme.mordor.hello.library.HelloLibrary;
         
 public class Client {
 
