@@ -4,7 +4,6 @@ apply plugin: 'maven'
 
 mainClassName = 'net.bounceme.mordor.hello.client.HelloClient'
 version = 'dev'
-//placeholder = 'foo'
 
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
@@ -22,34 +21,9 @@ dependencies {
     compile 'com.github.THUFIR:hello_api:dev'
 }
 
-
-/*
-task release(type: Jar) {
-    manifest {
-        attributes('Main-Class': mainClassName)
-    }
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
-}
-
-*/
-
-
-
 jar {
-from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-manifest {
-attributes ('Main-Class': mainClassName)
-//      "Class-Path": configurations.compile.collect { it.getName() }.join(' '))
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes ('Main-Class': mainClassName)
+    }
 }
-}
-
-
-
-//assemble.dependsOn (jar)
-
-/*
-configurations.all {
-resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
- */
