@@ -86,3 +86,9 @@ install {
         }
     }
 }
+
+
+applicationDistribution.with {
+    exclude 'org.codehaus.groovy.*.jar'
+    exclude 'bar*.jar'
+}
