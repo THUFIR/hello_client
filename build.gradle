@@ -5,6 +5,13 @@ apply plugin: 'maven'
 mainClassName = 'net.bounceme.mordor.hello.client.HelloClient'
 version = 'dev'
 
+
+
+group = 'com.some.project'
+description = 'Update Server'
+
+
+
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 if (!hasProperty(mainClassName)) {
