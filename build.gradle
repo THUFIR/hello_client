@@ -3,15 +3,9 @@ apply plugin: 'application'
 apply plugin: 'maven'
 
 mainClassName = 'net.bounceme.mordor.hello.client.HelloClient'
-version = 'dev'
-
-
-
-group = 'com.some.project'
-description = 'Update Server'
-
-
-
+//version = 'dev'
+//group = 'com.some.project'
+description = 'hello world KISS'
 
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
@@ -24,71 +18,18 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-configurations { providedCompile }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.10'
-    compile 'com.github.THUFIR:hello_api:dev'
-   // providedCompile group: 'com.github.THUFIR:hello_api:dev', name: 'hello_api', version:'dev'        
-    providedCompile 'com.github.THUFIR:hello_api:dev'        
+    compile 'com.github.THUFIR:hello_api:master-SNAPSHOT'
 }
-
-
-
-
-
-compileJava {
-    sourceSets.main.compileClasspath += configurations.providedCompile
-}
-
-run {
-    classpath += configurations.providedCompile
-}
-
 
 jar.doFirst
 {
-    // aggregate all the jars needed at runtime into a local variable (array)
     def manifestClasspath = configurations.runtime.collect { it.name }
-
-   
-    println (manifestClasspath)
-    
-    // remove duplicate jar names, and join the array into a single string
     manifestClasspath = manifestClasspath.unique().join(" ")
-
-        println (manifestClasspath)
-
-    
-    // set manifest attributes - mainClassName must be set before it is used here
+    println (manifestClasspath)
     manifest.attributes.put("Main-Class", mainClassName)
     manifest.attributes.put("Class-Path", manifestClasspath)
 }
 
-
-jar {
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    manifest {
-        attributes ('Main-Class': mainClassName)
-    }
-}
-
-install {
-    repositories.mavenInstaller {
-        pom.project {
-            licenses {
-                license {
-                    name 'The Apache Software License, Version 2.0'
-                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    distribution 'repo'
-                }
-            }
-        }
-    }
-}
-
-
-applicationDistribution.with {
-    exclude 'org.codehaus.groovy.*.jar'
-    exclude 'bar*.jar'
-}
