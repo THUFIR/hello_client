@@ -7,6 +7,11 @@ mainClassName = 'net.bounceme.mordor.hello.client.HelloClient'
 //group = 'com.some.project'
 description = 'hello world KISS'
 
+
+clean{
+    delete "hello_client"
+}
+
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 if (!hasProperty(mainClassName)) {

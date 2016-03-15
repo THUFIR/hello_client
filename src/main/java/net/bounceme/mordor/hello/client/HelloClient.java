@@ -5,13 +5,13 @@ import net.bounceme.mordor.hello.library.HelloLibrary;
         
 public class HelloClient {
 
-    public static void main(String[] args) {
-        new HelloClient().runLibrary();
+    public static void main(String... args) {
+        new HelloClient().runLibrary(args);
     }
 
-    private void runLibrary() {
+    private void runLibrary(String... args) {
         HelloLibrary library = new HelloLibrary();
-        out.println(library.hello("fred"));
+        out.println(library.hello(args));
     }
 
 }
